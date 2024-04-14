@@ -19,7 +19,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t hello-world-demo https://github.com/pal-12/HelloworldDemo'
+                    sh 'docker build -t hello-world-demo .'
                 }
             }
         }

@@ -1,8 +1,7 @@
 pipeline {
     agent any
-    environment {
-        // Specify JAVA_HOME for the entire pipeline
-        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
+    tools {
+      maven "M3"  
     }
     stages {
         stage('Checkout') {

@@ -6,11 +6,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/pal-12/HelloworldDemo'
             }
         }
-        stage('build') {
-            steps {
-              sh 'mvn -f hello-world-demo/pom.xml clean install'
-            }
-         }
        
         stage('Build Docker Image') {
             steps {

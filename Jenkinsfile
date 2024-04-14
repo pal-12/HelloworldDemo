@@ -18,3 +18,20 @@ pipeline {
        }
    }
 }
+stage('build docker image') {
+                steps {
+                     script {
+                        sh 'docker build -t https://github.com/pal-12/HelloworldDemo'
+                    } 
+                }
+        }
+        
+        stage('deploy') {
+                steps {
+                     script {
+                        sh 'docker run -d --hellooworlddemo -p 8282:8282 path of your repo
+                    } 
+                }
+        }
+}
+}

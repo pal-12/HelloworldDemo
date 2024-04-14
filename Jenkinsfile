@@ -29,7 +29,7 @@ stage('build docker image') {
         stage('deploy') {
                 steps {
                      script {
-                        sh 'docker run -d --hellooworlddemo -p 8282:8282 path of your repo
+                        sh 'docker run -d --hellooworlddemo -p 8282:8282 https://github.com/pal-12/HelloworldDemo
                     } 
                 }
         }

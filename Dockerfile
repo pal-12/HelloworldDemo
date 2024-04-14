@@ -14,7 +14,7 @@ RUN ls -l
 RUN apt-get update
 
 RUN wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz -P /tmp 
-RUN tar xf /tmp/apache-maven-*.tar.gz -C /opt && ln -s /opt/apache-maven-3.8.4 /opt/maven && export M3_HOME=/opt/maven && export MAVEN_HOME=/opt/maven && export PATH=${M3_HOME}/bin:${PATH}
+RUN tar xf /tmp/apache-maven-*.tar.gz -C /opt && ln -s /opt/apache-maven-3.9.6 /opt/maven && export M3_HOME=/opt/maven && export MAVEN_HOME=/opt/maven && export PATH=${M3_HOME}/bin:${PATH}
 
 # Build the project with Maven
 RUN mvn clean install

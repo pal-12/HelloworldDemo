@@ -6,16 +6,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/pal-12/HelloworldDemo'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
+       
         stage('Build Docker Image') {
             steps {
                 script {

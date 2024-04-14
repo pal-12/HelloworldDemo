@@ -11,7 +11,9 @@ COPY . .
 RUN ls -l
 
 # Update package lists and install Maven
-RUN apt-get update && apt-get install -y maven
+RUN apt-get update
+
+RUN wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz -P /tmp && tar xf /tmp/apache-maven-*.tar.gz -C /opt && ln -s /opt/apache-maven-3.8.4 /opt/maven && export M3_HOME=/opt/maven && export MAVEN_HOME=/opt/maven && export PATH=${M3_HOME}/bin:${PATH}
 
 # Build the project with Maven
 RUN mvn clean install
